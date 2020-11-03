@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import Overlay from "./overlay/Overlay";
-
-function useKeypress(key, action) {
-  useEffect(() => {
-    function onKeyup(e) {
-      if (e.key === key) action();
-    }
-    window.addEventListener("keyup", onKeyup);
-    return () => window.removeEventListener("keyup", onKeyup);
-  }, []);
-}
+import useKeypress from "./hooks/useKeypress";
 
 export default function App() {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -25,8 +16,8 @@ export default function App() {
 
   return (
     <div>
-      <h1>Hello StackBlitzterzz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+      <h1>A React overlay using useEffect and useState hooks</h1>
+      <p>works with button click to open and close, or esc to dismiss</p>
       <button onClick={toggleOverlay}>Show Overlay</button>
       <Overlay show={showOverlay} toggleOverlay={toggleOverlay} />
     </div>
