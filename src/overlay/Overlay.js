@@ -8,7 +8,7 @@ function Overlay({ show, toggleOverlay }) {
           overlay
           <button onClick={toggleOverlay}>x</button>
         </div>,
-        document.body
+        document.getElementById("portal-container")
       )
     : null;
 }

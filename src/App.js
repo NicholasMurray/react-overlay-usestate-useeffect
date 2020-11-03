@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import Overlay from "./overlay/Overlay";
 import useKeypress from "./hooks/useKeypress";
@@ -20,6 +20,7 @@ export default function App() {
       <p>works with button click to open and close, or esc to dismiss</p>
       <button onClick={toggleOverlay}>Show Overlay</button>
       <Overlay show={showOverlay} toggleOverlay={toggleOverlay} />
+      <div id="portal-container" />
     </div>
   );
 }
